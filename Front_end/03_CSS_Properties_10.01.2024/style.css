@@ -5,7 +5,7 @@
 
 body {
     background-color: beige;
-    font-style: italic;
+    font-style: normal;
 }
 
 .header {
@@ -14,17 +14,19 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
- 
+
 }
 
 .country-description {
     margin-bottom: 40px;
-    
+    margin-left: 10px;
+
 }
 
-.country-description h2{
+.country-description h2 {
     color: rgb(0, 17, 255);
 }
+
 .country-description img {
     width: 100px;
     height: 60px;
