@@ -16,3 +16,17 @@ body {
     background-size: cover;
  
 }
+
+.country-description {
+    margin-bottom: 40px;
+    
+}
+
+.country-description h2{
+    color: rgb(0, 17, 255);
+}
+.country-description img {
+    width: 100px;
+    height: 60px;
+    border-radius: 50%;
+}
