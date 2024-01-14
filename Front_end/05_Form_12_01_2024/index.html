@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/i1.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Registration Form</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <img src="./images/Screenshot_5.jpg" alt="image" />
+      <h1>Sign Up</h1>
+    </div>
+
+    <form>
+      <div class="name">
+        <label for="name">Name:</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter your name..."
+          required
+        />
+      </div>
+
+      <div class="lastname">
+        <label for="lastname">Lastname:</label>
+        <input
+          id="lastname"
+          type="text"
+          placeholder="Enter your lastname..."
+          required
+        />
+      </div>
+
+      <div class="email">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email..."
+          required
+        />
+      </div>
+
+      <div class="phone">
+        <label for="phone">Phone:</label>
+        <input
+          id="phone"
+          type="tel"
+          placeholder="+123-456-7890"
+          pattern="\+?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+          required
+        />
+      </div>
+
+      <div class="password">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          placeholder="Enter your password..."
+          minlength="8"
+          required
+        />
+      </div>
+
+      <div class="hobby">
+        <label for="hobby">Hobby:</label>
+        <select id="hobby" required>
+          <option value="">Choose your hobby from the list:</option>
+          <option value="fishing">Fishing</option>
+          <option value="chess">Chess</option>
+          <option value="football">Soccer</option>
+          <option value="no">Not in this list</option>
+        </select>
+      </div>
+
+      <div class="submit">
+        <button type="submit">Submit</button>
+      </div>
+
+      <div class="agree">
+        <input id="agree" type="checkbox" required />
+        <label for="agree">I accept the terms of use and privacy policy</label>
+      </div>
+    </form>
+    <footer></footer>
+  </body>
+</html>

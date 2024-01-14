@@ -34,6 +34,10 @@ h1 {
   justify-content: space-between;
 }
 
+/* 
+ Свойство justify-content: space-between; используется для распределения flex-элементов вдоль главной оси с равным пространством между ними.
+Flexbox - это мощная модель макета в CSS, упрощающая дизайн и выравнивание элементов в отзывчивом и динамичном режиме. */
+
 .left,
 .right,
 .center {
@@ -63,7 +67,7 @@ h2 {
 }
 
 .country-description {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .country-description h2 {
