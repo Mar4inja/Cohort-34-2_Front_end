@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ body {
 }
 
 .header {
+  font-family: 'Covered By Your Grace', cursive;
   position: relative;
   padding-left: 39%;
   padding-top: 20px;
@@ -29,7 +31,7 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  outline: 2px solid rgb(70, 3, 70);
+  outline: 4px solid rgb(70, 3, 70);
 }
 
 .name,
