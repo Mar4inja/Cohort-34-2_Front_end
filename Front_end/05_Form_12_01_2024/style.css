@@ -1,30 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
 
 body {
-  background-color: beige;
-  font-style: normal;
-  margin: 20px;
-  max-width: 310px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
+  font-family: "Covered By Your Grace", cursive;
+  background-color: rgb(253, 248, 242);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
-}
-
-.header {
-  font-family: 'Covered By Your Grace', cursive;
-  position: relative;
-  padding-left: 45%;
-  padding-top: 20px;
-  color: white;
-  font-style: normal;
+  margin-top: 10px;
 }
 
 input[type="text"],
@@ -36,42 +33,24 @@ input[type="password"] {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5%;
-
 }
 
-.header img {
-  max-width: 120%;
-  height: 700px;
-  border-radius: 5%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  outline: 4px solid rgb(70, 3, 70);
+button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 5px;
 }
 
-.name,
-.lastname,
-.email,
-.phone,
-.password,
-.hobby,
-.submit {
-  padding-left: 30%;
-  padding-top: 10px;
-  color: rgb(0, 0, 0);
+button[type="submit"] {
+  background-color: green;
 }
 
-.hobby select {
-  margin-top: 10px;
+button[type="reset"] {
+  background-color: rgb(240, 49, 49);
 }
 
-.name {
-  padding-top: 40px;
-}
-
-.agree {
-  padding-left: 30%;
-  padding-top: 30px;
-  color: beige;
+label[for="agree"] {
+  display: inline-block;
 }

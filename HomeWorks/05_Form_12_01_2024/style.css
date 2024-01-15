@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: beige;
+  font-style: normal;
+  margin: 20px;
+  max-width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+label {
+  display: block;
+}
+
+.header {
+  font-family: 'Covered By Your Grace', cursive;
+  position: relative;
+  padding-left: 45%;
+  padding-top: 20px;
+  color: white;
+  font-style: normal;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+
+}
+
+.header img {
+  max-width: 120%;
+  height: 700px;
+  border-radius: 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  outline: 4px solid rgb(70, 3, 70);
+}
+
+.name,
+.lastname,
+.email,
+.phone,
+.password,
+.hobby,
+.submit {
+  padding-left: 30%;
+  padding-top: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.hobby select {
+  margin-top: 10px;
+}
+
+.name {
+  padding-top: 40px;
+}
+
+.agree {
+  padding-left: 30%;
+  padding-top: 30px;
+  color: beige;
+}
