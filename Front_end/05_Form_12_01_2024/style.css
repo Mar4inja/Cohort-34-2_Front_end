@@ -14,18 +14,34 @@ body {
   padding: 10px;
 }
 
+label {
+  display: block;
+}
+
 .header {
   font-family: 'Covered By Your Grace', cursive;
   position: relative;
-  padding-left: 39%;
+  padding-left: 45%;
   padding-top: 20px;
   color: white;
   font-style: normal;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+
+}
+
 .header img {
   max-width: 120%;
-  height: 400px;
+  height: 700px;
   border-radius: 5%;
   position: absolute;
   top: 0;
@@ -41,7 +57,7 @@ body {
 .password,
 .hobby,
 .submit {
-  padding-left: 20%;
+  padding-left: 30%;
   padding-top: 10px;
   color: rgb(0, 0, 0);
 }
@@ -55,7 +71,7 @@ body {
 }
 
 .agree {
-  padding-left: 20%;
+  padding-left: 30%;
   padding-top: 30px;
   color: beige;
 }
