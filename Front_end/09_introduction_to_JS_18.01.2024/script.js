@@ -45,10 +45,54 @@ div1.appendChild(newP);
 
 // HomeWork
 
-const t = setInterval(move, 20);
+const t = setInterval(move1, 30);
+const box = document.getElementById("box");
+let pos = 0;
+let flag = true;
+let dir = 1;
+//  move();
+
 // clearInterval(t);
 
+// function move() {
+//   pos++;
+//   if (pos == 150) {
+//     clearInterval(t);
 
-function move() {
+//   }
 
+//   box.style.top = pos + 'px';
+//   box.style.left = pos + 'px';
+//   // box.style.left = `${pos}` + 'px' ;
+// }
+// function move() {
+  // if (flag) {
+  //   // Ja ir true, tad pievieno position +1, ja nē tad -1 (Vārdu sakot +1 kustība uz priekšu, bet -1 kustība atpakaļ.)
+  //   pos++;
+  // } else {
+  //   pos--;
+  // }
+  // flag ? pos++ : pos--;
+  // if (pos == 150) { // ja pozīcija saniedza 150, tad uzsāc kustiūbu atpakaļ!
+  //   flag = false;
+  // }
+  // if (pos == 0) {  // ja pozīcija sasniedza 0 un atgriezās sākumpunktā, tad ieslēdz true un ej uz priekšu!
+  //   flag = true;
+  // }
+//   if (pos == 0 || pos == 150) {
+//     flag = !flag;
+//   }
+//   box.style.top = pos + "px";
+//   box.style.left = pos + "px";
+//   // box.style.left = `${pos}` + 'px' ;
+// }
+
+function move1() {
+  pos += dir;
+  if (pos == 0 || pos == 150) {
+    // dir = -dir;
+    dir *= -1;
+  }
+  box.style.top = pos + "px";
+  box.style.left = pos + "px";
 }
