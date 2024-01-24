@@ -60,8 +60,14 @@ const library = [
   }
   
   function findBook(isbn) {
-    const index = library.findIndex((book) => book.ISBN === isbn);
-    return index !== -1 ? index : -1;
+    let i = 0;
+    for (const book of library) {
+      if (book.ISBN === isbn) {
+        return i;
+      }
+      i++;
+    }
+    return -1;
   }
   
   printLibrary();
