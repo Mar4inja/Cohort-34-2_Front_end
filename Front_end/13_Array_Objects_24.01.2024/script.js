@@ -86,3 +86,103 @@ console.log(res);
     5. withdraw(sum) - для описания действия по списанию суммы со счёта;
     6. checkBalance() - для проверки баланса.
 */
+const bankAccount = {
+  accountNumber: "123456789",
+  accountHolderName: "Alice",
+  balance: 1000,
+  deposit: (sum) => {
+    sum > 0 && sum < 100000
+      ? (bankAccount.balance += sum)
+      : console.log("Amount is invalid");
+  },
+  withdraw: (sum) => {
+    sum > 5 && sum <= bankAccount.balance
+      ? (bankAccount.balance -= sum)
+      : console.log("Amount is invalid");
+  },
+  checkBalance: () => console.log(bankAccount.balance),
+};
+
+// //Deposit
+// bankAccount.checkBalance();
+// bankAccount.deposit(500);
+// bankAccount.checkBalance();
+
+// bankAccount.deposit(700);
+// bankAccount.checkBalance();
+
+// bankAccount.deposit(-500);
+// bankAccount.checkBalance();
+
+// bankAccount.deposit(600000);
+// bankAccount.checkBalance();
+
+// //Withdraw
+
+// bankAccount.withdraw(500);
+// bankAccount.checkBalance();
+
+// bankAccount.withdraw(700);
+// bankAccount.checkBalance();
+
+// bankAccount.withdraw(-500);
+// bankAccount.checkBalance();
+
+// bankAccount.withdraw(600000);
+// bankAccount.checkBalance();
+
+const balanceH1 = document.getElementById('balanceH1');
+const withdrawBtn = document.getElementById('withdrawBtn');
+const amountInput = document.getElementById('amountInput');
+const depositBtn = document.getElementById('depositBtn');
+const timeH2 = document.getElementById('timeH2');
+
+withdrawBtn.onclick = () => {
+   if (!isNaN(+amountInput.value)) {
+    bankAccount.withdraw(+amountInput.value);
+
+   }
+   balanceH1.textContent = 'Balance: ' +bankAccount.balance; // change balance in app
+   amountInput.value = '';   // clean amount after enter
+  }
+  depositBtn.onclick = () => {
+    if (!isNaN(-amountInput.value)) {
+     bankAccount.deposit(+amountInput.value);
+ 
+    }
+    balanceH1.textContent = 'Balance: ' +bankAccount.balance; // change balance in app
+    amountInput.value = '';   // clean amount after enter
+   }
+
+   const date = new Date();
+   console.log(date.getTime() /1000 / 60 / 60 / 24 / 365.25);
+
+   
+
+   const time = () => {
+    const now = new Date();
+    const hours = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+    const minutes = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();;
+    const seconds = now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds();;
+    const actualTime = hours + ':' + minutes + ':' + seconds;
+    timeH2.textContent = actualTime;
+    console.log(actualTime);
+
+
+  }
+
+
+  setInterval(time, 1000);
+
+  
+  // 1. totalCost: 0 // Итоговая стоимость всех товаров
+  // 2. addItem() // функция для добавления товара на склад
+  // 3. removeItem() // функция для удаления товара на склад
+  // 4. updateTotalCost() // обновление значения totalCost
+  
+  item = {
+      name: 'Snickers',
+      price: 5,
+      quantity: 100,
+      totalCost: 0
+  }
