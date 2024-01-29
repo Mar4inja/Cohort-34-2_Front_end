@@ -41,6 +41,6 @@ const stock = {
     stock.removeItem(i);
   };
   
-  addItem("Laptop", 560, 22);
+  addItem("Laptop", 100, 22);
   console.log(stock.totalCost);
   
