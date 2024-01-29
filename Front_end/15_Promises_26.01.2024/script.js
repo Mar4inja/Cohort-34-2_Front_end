@@ -57,7 +57,7 @@ const stock = {
   },
 };
 
-stock.updateStatistics(); // Update statistics initially
+stock.updateStatistics();
 
 const productName = document.getElementById("productName");
 const productPrice = document.getElementById("productPrice");
