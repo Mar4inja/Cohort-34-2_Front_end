@@ -1,11 +1,24 @@
+// HOMEWORK
+
+/* 
+    const items = [];
+    Необходимо создать объект stock, который будет представлять склад нашей продукции
+
+    1. totalCost: 0 // Итоговая стоимость всех товаров
+    2. addItem() // функция для добавления товара на склад
+    3. removeItem() // функция для удаления товара на склад
+    4. updateTotalCost() // обновление значения totalCost
+
+    item = {
+        name: 'Snickers',
+        price: 5,
+        quantity: 100
+    }
+*/
+
 const stock = {
-  items: [],
+  items: [], // массив с товарами
   totalCost: 0,
-  numPositions: 0,
-  totalQuantityAllProducts: 0,
-  maxPrice: 0,
-  avgPrice: 0,
-  minPrice: Infinity,
   addItem(item) {
     const existingItem = this.items.find((e) => e.name === item.name);
 
@@ -15,7 +28,7 @@ const stock = {
       this.items.push(item);
     }
 
-    this.updateStatistics();
+    this.updateTotalCost();
   },
   removeItem(itemName, count) {
     const index = this.items.findIndex((e) => e.name === itemName);
@@ -24,40 +37,22 @@ const stock = {
         ? this.items.splice(index, 1)
         : (this.items[index].quantity -= count);
     }
-
-    this.updateStatistics();
   },
-  updateStatistics() {
-    this.numPositions = this.items.length;
-    this.totalCost = this.items.reduce((acc, item) => acc + item.quantity * item.price, 0);
-    this.totalQuantityAllProducts = this.items.reduce((acc, item) => acc + item.quantity, 0);
-
-    if (this.numPositions > 0) {
-      this.maxPrice = Math.max(...this.items.map((item) => item.price));
-      this.minPrice = Math.min(...this.items.map((item) => item.price));
-      this.avgPrice = this.totalCost / this.totalQuantityAllProducts;
-    } else {
-      this.maxPrice = 0;
-      this.minPrice = Infinity;
-      this.avgPrice = 0;
-    }
-
-    this.displayStatistics();
-  },
-  displayStatistics() {
-    const statsList = document.getElementById("statsList");
-    statsList.innerHTML = `
-      <li>Number of Positions: ${this.numPositions}</li>
-      <li>Total Cost of All Products: ${this.totalCost}</li>
-      <li>Total Quantity of All Products: ${this.totalQuantityAllProducts}</li>
-      <li>Max Price: ${this.maxPrice}</li>
-      <li>Average Price: ${this.avgPrice.toFixed(2)}</li>
-      <li>Min Price: ${this.minPrice}</li>
-    `;
+  updateTotalCost() {
+    // let updatedCost = 0;
+    // for (const item of this.items) {
+    //   updatedCost += item.price * item.quantity;
+    // }
+    // this.totalCost = updatedCost;
+    this.totalCost = this.items.reduce(
+      (acc, item) => acc + item.quantity * item.price,
+      0
+    );
+    console.log(this.totalCost);
   },
 };
 
-stock.updateStatistics();
+stock.updateTotalCost();
 
 const productName = document.getElementById("productName");
 const productPrice = document.getElementById("productPrice");
@@ -65,6 +60,7 @@ const productQuantity = document.getElementById("productQuantity");
 const add = document.getElementById("add");
 const stats = document.getElementById("stats");
 const productList = document.getElementById("productList");
+const statsList = document.getElementById("statsList");
 
 add.onclick = () => {
   const name = productName.value.trim();
@@ -75,14 +71,9 @@ add.onclick = () => {
     stock.addItem({ name, price, quantity });
   }
 
-
-  productName.value = "";
-  productPrice.value = "";
-  productQuantity.value = "";
-
-  productList.innerHTML = '';
-  stock.items.forEach(e => {
-    const li = document.createElement('li');
+  productList.innerHTML = "";
+  stock.items.forEach((e) => {
+    const li = document.createElement("li");
     li.textContent = `
       Product name: ${e.name},
       Product price: ${e.price},
@@ -90,11 +81,62 @@ add.onclick = () => {
     `;
     productList.appendChild(li);
   });
-}
 
-// 1. Кол-во позиций;
-//   2. Итоговая стоимость всех продуктов;
-//   3. Итоговое кол-во всех продуктов;
-//   4. Макс. цена;
-//   5. Средняя цена;
-//   6. Мин. цена.
+  productName.value = productPrice.value = productQuantity.value = '';
+};
+
+// item = {
+//   name: 'Snickers',
+//   price: 5,
+//   quantity: 100
+// }
+
+// HOMEWORK
+
+/* 
+  1. Кол-во позиций;
+  2. Итоговая стоимость всех продуктов;
+  3. Итоговое кол-во всех продуктов;
+  4. Макс. цена;
+  5. Средняя цена;
+  6. Мин. цена.
+*/
+
+stats.onclick = () => {
+  if (stock.items.length) {
+    const itemsQuantity = stock.items.length; // Кол-во позиций or massive length
+    const totalCost = stock.totalCost;
+    const totalQuantity = stock.items.reduce(
+      (acc, item) => acc + item.quantity,
+      0
+    );
+
+    // const maxPrice = stock.item.reduce(
+    //   (acc, item) => (acc >= item.price ? acc : item.price),
+    //   0
+    // );
+
+    // const maxPrice = stock.items.sort((a, b) => a.price - b.price)[
+    //   itemsQuantity - 1
+    // ]; // sort by price from cheaper to most expensive
+
+    // const maxPrice = stock.items.sort((a, b) => b.price - a.price)[
+    //   itemsQuantity - 1
+    // ]; // sort by price from expensive to  cheap
+
+    const maxPrice = Math.max(...stock.items.map((element) => element.price));
+    const minPrice = Math.min(...stock.items.map((element) => element.price));
+    const avgPrice = totalCost / totalQuantity;
+
+    statsList.innerHTML = `
+    <li>
+    <p>Number of items: ${itemsQuantity}</p>
+    <p>Total cost: ${totalCost}</p>
+    <p>Total quantity: ${totalQuantity}</p>
+    <p>Minimal price: ${minPrice}</p>
+    <p>Average price: ${avgPrice}</p>
+    <p>Max price: ${maxPrice}</p>
+    </li>
+    `;
+  }
+};
