@@ -56,21 +56,45 @@
 //     const listItem = event.target.parentNode;
 //     taskList.removeChild(listItem);
 // }
+
+//TODO LIST App
+const tasks = [];
+
 const button = document.getElementById("addBtn");
 const input = document.getElementById("taskInput");
 const list = document.getElementById("taskList");
 
+list.onclick = (e) => {
+  console.log(e);
+  if (e.target.tagName === "BUTTON") {
+    e.target.parentElement.remove();
+  }
+
+  if (e.target.type === "checkbox") {
+    const spanElement = e.target.previousElementSibling;
+
+    if (spanElement) {
+      if (e.target.checked) {
+        spanElement.style.textDecoration = "line-through";
+      } else {
+        spanElement.style.textDecoration = "none";
+      }
+    }
+  }
+};
+
 button.onclick = () => {
   const task = input.value.trim();
   if (task) {
+    tasks.push(task);
     const li = document.createElement("li");
     li.innerHTML = `
+          <span>${tasks.length}. ${task}</span>
             <input type='checkbox'>
-            <span>${task}</span>
             <button>Delete</button>
         `;
     list.appendChild(li);
+    tasks.push(task);
   }
   input.value = "";
 };
-
