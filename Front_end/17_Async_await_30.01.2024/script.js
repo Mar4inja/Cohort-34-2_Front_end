@@ -8,7 +8,7 @@ usersBtn.onclick = () => {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
     .then((users) => {
-      userList.innerHTML = "";
+      userList.innerHTML = ""; 
       users.forEach((user) => {
         const li = document.createElement("li");
         li.textContent = user.name;
@@ -38,7 +38,7 @@ function displayUserDetails({
   details.innerHTML = `
   <h2>${name}</h2>
   <p><strong>Email: </strong>${email}</p>
-  <p><strong>Phone: </strong>${phone.split(" ")[0]}</p>   // work without keys
+  <p><strong>Phone: </strong>${phone.split(" ")[0]}</p>  
   <p><strong>Website: </strong>${website}</p>
   <p><strong>Company: </strong>${companyName}</p>
   <p><strong>Address: </strong>${city}, ${street}, ${suite}</p>
