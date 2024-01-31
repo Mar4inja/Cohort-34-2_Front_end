@@ -2,18 +2,19 @@ const usersBtn = document.getElementById("loadUsersBtn");
 const userList = document.getElementById("userList");
 const postBtn = document.getElementById("postBtn");
 const postList = document.getElementById("postList");
-const userDetailsDiv = document.getElementById("userDetails");
+const details = document.getElementById("userDetails");
 
 usersBtn.onclick = () => {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
     .then((users) => {
+      userList.innerHTML = "";
       users.forEach((user) => {
         const li = document.createElement("li");
         li.textContent = user.name;
-
+        li.style.cursor = "pointer";
         li.onclick = () => {
-          showUserDetails(user);
+          displayUserDetails(user);
         };
 
         userList.appendChild(li);
@@ -25,6 +26,26 @@ usersBtn.onclick = () => {
       userList.appendChild(li);
     });
 };
+
+function displayUserDetails({
+  name,                           // Destructirization
+  email,
+  phone,
+  website,
+  company: { name: companyName },
+  address: { city, street, suite },
+}) {
+  details.innerHTML = `
+  <h2>${name}</h2>
+  <p><strong>Email: </strong>${email}</p>
+  <p><strong>Phone: </strong>${phone.split(" ")[0]}</p>   // work without keys
+  <p><strong>Website: </strong>${website}</p>
+  <p><strong>Company: </strong>${companyName}</p>
+  <p><strong>Address: </strong>${city}, ${street}, ${suite}</p>
+ 
+  `;
+}
+
 postBtn.onclick = () => {
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then((response) => response.json())
@@ -43,16 +64,6 @@ postBtn.onclick = () => {
     });
 };
 
-function showUserDetails(user) {
-  userDetailsDiv.innerHTML = `
-      <h2>Детальная информация о пользователе:</h2>
-      <p>Email: ${user.email}</p>
-      <p>Phone: ${user.phone.replace(/\D/g, "")}</p>
-      <p>Website: ${user.website}</p>
-      <p>Company: ${user.company.name}</p>
-      <p>Address: ${user.address.street}, ${user.address.suite}</p>
-    `;
-}
 // HOMEWORK
 /*
     При нажатии на конкретного пользователя из списка должна отображаться

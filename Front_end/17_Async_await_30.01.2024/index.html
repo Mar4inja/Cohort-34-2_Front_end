@@ -3,23 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
     <title>Async_Await</title>
   </head>
   <body>
     <h1>JSONPlaceHolder</h1>
 
-    <div>
-      <h2>Users</h2>
-      <button id="loadUsersBtn">Load Users</button>
-      <button id="postBtn">Posts</button>
+    <h2>Users</h2>
+    <button id="loadUsersBtn">Load Users</button>
+    <div style="display: flex; justify-content: space-evenly; ">
       <ol id="userList"></ol>
+      <div id="userDetails"></div>
     </div>
-    <div id="userDetails"></div>
-    <div>
-      <h2>Posts</h2>
-      <ol id="postList"></ol>
-    </div>
+
+    <h2>Posts</h2>
+    <ol id="postList"></ol>
+    <button id="postBtn">Posts</button>
   </body>
 </html>
