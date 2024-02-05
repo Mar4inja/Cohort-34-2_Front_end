@@ -5,40 +5,34 @@ const input = document.getElementById("locationInput");
 const button = document.getElementById("getWeatherBtn");
 const info = document.getElementById("weatherContainer");
 
-button.onclick = () => {
-  const cityName = input.value.trim();
-  if (cityName) {
-    fetch(`${BASE_URL}?q=${cityName}&appid=${API_KEY}&units=metric`)
-      .then((response) => response.json())
-      .then((weather) => displayWeather(weather));
-      input.value = '';
-  }
-  //   const example = {
-  //     main: {
-  //       temp: 5,
-  //     },
-  //     weather: [
-  //       {
-  //         description: "clear sky",
-  //       },
-  //     ],
-  //     wind: {
-  //       speed: 5,
-  //     },
-  //   };
-  // };
+button.onclick = async () => {
+    const cityName = input.value.trim();
+    if (cityName) {
+        try {
+            const response = await fetch(`${BASE_URL}?q=${cityName}&appid=${API_KEY}&units=metric`);
+            const weatherInfo = await response.json();
+            displayWeather(weatherInfo);
+        } catch (error) {
+            console.log(error.message);
+        }finally {
+            console.log('Hello from block finally');
+        }
 
-  function displayWeather({
+    };
+    input.value = "";
+};
+
+function displayWeather({
     main: { temp },
     weather: [{ description }],
     wind: { speed },
     name: cityName, // alias
-  }) {
+}) {
     info.innerHTML = `
   <h2 class="mb-3">${cityName}</h2>
   <p>Temperature: ${temp} °C</p>
   <p>Description: ${description}</p>
   <p>Wind speed: ${speed} m/s</p>
 `;
-  }
-};
+}
+

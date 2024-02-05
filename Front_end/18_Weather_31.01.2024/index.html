@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="./script2.js" defer></script>
     <title>Weather App</title>
   </head>
   <body>
     <div id="container">
-      <h1>Weather App</h1>
-      <div id="inputContainer">
-        <input type="text" id="locationInput" />
-        <button id="getWeatherBtn" style="border: none; background-color: #007bff; border-radius: 3px;">Get weather</button>
+      <h1 class="text-center ">Weather App</h1>
+
+      <div id="inputContainer" class="d-flex justify-content-center my-3">
+        <input type="text" id="locationInput" class="form-control w-50 "  placeholder="City name...">
+       
+        <button id="getWeatherBtn" class="btn btn-success">Get Weather</button>
       </div>
-      <div id="weatherContainer">
+      <div id="weatherContainer" class="my-3 d-flex flex-column align-items-center ">
 
       </div>
     </div>
