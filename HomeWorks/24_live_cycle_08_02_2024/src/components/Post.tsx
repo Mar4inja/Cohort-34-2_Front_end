@@ -14,7 +14,7 @@ const Posts = () => {
       .then((response) => response.json())
       .then((data) => setPostList(data));
   }, []);
-
+ 
   return (
     <div>
       {postList &&
