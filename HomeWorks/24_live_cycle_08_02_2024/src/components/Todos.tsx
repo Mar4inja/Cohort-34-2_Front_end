@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Task from "./Task";
 
 interface ITodo {
   userId: number;
@@ -18,25 +19,16 @@ const Todos = () => {
       .then((data) => setTodoList(data));
 
 
-  return () => console.log("Component is unmounted");
-}, []);
-return (
-  <div>
-    {todoList &&
-      todoList.map((todo, index) => (
-        <div
-          key={index}
-          style={
-            todo.completed
-              ? { textDecoration: "line-through" }
-              : { textDecoration: "none" }
-          }
-        >
-          {index + 1}. {todo.title}
-        </div>
-      ))}
-  </div>
-);
+    return () => console.log("Component is unmounted");
+  }, []);
+  return (
+    <div>
+      {todoList &&
+        todoList.map((todo, index) => (
+          <Task key={index} number={index+1} task={todo}/>
+        ))}
+    </div>
+  );
 };
 
 export default Todos;

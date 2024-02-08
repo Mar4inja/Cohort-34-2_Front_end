@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Todos from './components/Todos';
-import Posts from './components/Posts';
+import Posts from './components/Post';
 
 function App() {
   return (
