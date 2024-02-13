@@ -13,7 +13,7 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route path='/photos' element={<PhotoList />} />
         <Route path='/posts' element={<PostsLists />} />
-        <Route path='/todoList' element={<Todos />} />
+        <Route path='/tasks' element={<Todos />} />
       </Route> 
     </Routes>
     // <div className="App">

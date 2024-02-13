@@ -9,18 +9,18 @@ interface IProps {
     }
 }
 
-const Task: FC<IProps> = ({ number, task }) => {
+const Task: FC<IProps> = () => {
   // 3. Получение контекста
-  const objContext = useContext(TodoContext);
+  const {number, task: { completed, title}} = useContext(TodoContext);
   return (
     <div
       style={
-        objContext.task.completed
+        completed
           ? { textDecoration: "line-through" }
           : { textDecoration: "none" }
       }
     >
-      {objContext.number}. {objContext.task.title}
+      {number}. {title}
     </div>
   );
 };

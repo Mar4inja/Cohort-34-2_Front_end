@@ -36,12 +36,13 @@ const Todos = () => {
         todoList.map((todo, index) => (
           // 2. Передача контекста
           <TodoContext.Provider
+          key={index}
             value={{
               number: index + 1,
               task: todo
             }}
           >
-            <Task key={index} number={index + 1} task={todo} />
+            <Task number={index + 1} task={todo} />
           </TodoContext.Provider>
         ))}
     </div>

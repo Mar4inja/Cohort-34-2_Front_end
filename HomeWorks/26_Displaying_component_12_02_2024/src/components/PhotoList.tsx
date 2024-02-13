@@ -8,7 +8,7 @@ export interface IPhoto {
   url: string;
   thumbnailUrl: string;
 }
-
+  
 export const PhotoContext = createContext<IPhoto | null>(null);
 
 const PhotoList = () => {
@@ -24,7 +24,7 @@ const PhotoList = () => {
     <div>
       {photos && photos.map((photo, index) => (
         <PhotoContext.Provider key={index} value={photo}>
-          <Photo key={index} photo={photo} />
+          <Photo photo={photo} />
         </PhotoContext.Provider>
       ))}
     </div>
