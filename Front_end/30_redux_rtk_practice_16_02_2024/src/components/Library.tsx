@@ -1,7 +1,14 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../redux/storeRTK'
-import { deleteBook } from '../redux/library/librarySlice';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../redux/storeRTK";
+import { deleteBook } from "../redux/library/librarySlice";
+
+interface Book {
+  ISBN: string;
+  title: string;
+  author: string;
+  year: string | number;
+}
 
 const Library = () => {
   const books = useSelector((state: RootState) => state.library.books);
@@ -13,11 +20,12 @@ const Library = () => {
 
   return (
     <div>
-      <h1 style={{color: 'blue'}}>Books in our library</h1>
+      <h1 style={{ color: "blue" }}>Books in our library</h1>
       <ul>
-        {books.map((book, index) => (
+        {books.map((book: Book, index: number) => (
           <li key={index}>
-            <p style={{color: 'red'}}>{book.ISBN}. "{book.title}" - {book.author}, {book.year}
+            <p style={{ color: "red" }}>
+              {book.ISBN}. "{book.title}" - {book.author}, {book.year}
               <button
                 className="btn btn-danger btn-sm mx-1"
                 onClick={() => handleDelete(index)}
@@ -29,7 +37,7 @@ const Library = () => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Library
+export default Library;

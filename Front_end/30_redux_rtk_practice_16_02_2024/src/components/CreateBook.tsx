@@ -1,7 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook, deleteBook } from "../redux/library/librarySlice";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const CreateBook = () => {
   const [title, setTitle] = useState("");
@@ -30,38 +29,41 @@ const CreateBook = () => {
   const handleDelete = (index: number) => {
     dispatch(deleteBook(index));
   };
-
+  
   return (
-    <div>
-      <h1 style={{ color: "blue" }}>Create Book:</h1>
+    <div className="text-center">
+      <h1>Create Book:</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="d-flex flex column w-50">
         <label style={{ color: "red" }} htmlFor="title">
           Title
         </label>
         <input
-          className="rounded-input"
+          id="title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          className="form-control my-3"
         />
         <label style={{ color: "red" }} htmlFor="author">
           Author
         </label>
         <input
-          className="rounded-input"
+          id="author"
           type="text"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          className="form-control mb-3"
         />
         <label style={{ color: "red" }} htmlFor="year">
           Year
         </label>
         <input
-          className="rounded-input"
+          id="year"
           type="text"
           value={year}
           onChange={(e) => setYear(e.target.value)}
+          className="form-control mb-3"
         />
 
         <button className="btn btn-success btn-sm mb-2 mx-1" type="submit">

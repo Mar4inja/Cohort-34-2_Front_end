@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Poller One', serif;
+    background-image: url('./images/sky.jpg');
+    color: #eedb00;
+    /* Фиксация фонового изображения */
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(60, 69, 67, .6);
+    border-radius: 15px 15px 0 0;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    position: fixed;
+    top: 5px;
+    left: 40px;
+}
+
+li, h1 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+.left {
+    float: left;
+    width: 25%;
+    box-shadow: 10px 10px 0 rgba(60, 69, 67, .6);
+    margin: 5px 10px 0 5px;
+}
+
+.right {
+    float: right;
+    width: 50%;
+    border: 1px solid #eedb00;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.right > img {
+    width: 32%;
+}
+
+.left > img {
+    width: 100%;
+}
+
+/* .bottomLeft {
+    border-radius: 0 0 0 15px;
+    border-bottom-left-radius: 150px;
+}
+
+.bottomRight {
+    border-radius: 0 0 15px 0;
+    border-bottom-right-radius: 150px;
+} */
+
+.right>:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+.right>:nth-child(8) {
+    border-bottom-left-radius: 15px;
+}
+
+footer {
+    clear: both;
+    background-color: rgba(60, 69, 67, .6);
+    height: 6em;
+}
