@@ -1,0 +1,86 @@
+header {
+  background-color: rgba(60, 69, 67, 0.6);
+  border-radius: 15px 15px 0 0;
+}
+
+.right > img {
+  width: 32%;
+}
+
+.left > img {
+  width: 100%;
+}
+
+.right > :last-child {
+  border-bottom-right-radius: 15px;
+}
+
+.right > :nth-child(8) {
+  border-bottom-left-radius: 15px;
+}
+
+header {
+  background-color: rgba(60, 69, 67, 0.6);
+  border-radius: 15px 15px 0 0;
+}
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  top: 5px;
+  left: 40px;
+}
+
+li,
+h1 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  padding: 1em 0;
+}
+
+.float-start > img {
+  box-shadow: 10px 10px 0 rgba(60, 69, 67, 0.6) 10px 10px;
+}
+
+.border {
+  border-radius: 0 0 15px 15px;
+}
+
+.bottomLeft {
+  border-radius: 0 0 0 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.bottomRight {
+  border-radius: 0 0 15px 0;
+  border-bottom-right-radius: 15px;
+}
+
+footer {
+  background-color: rgba(60, 69, 67, 0.6);
+  border-radius: 0 0 15px 15px;
+  height: 6em;
+}
+
+.btn-danger {
+  background: rgba(204, 3, 35, 0.5);
+  color: #eedb00;
+  border: 2px solid black;
+  height: fit-content;
+}
+
+.btn > p {
+  font-size: 0.8em;
+}
+
+.farGalaxy {
+  font-size: 1.6em;
+  letter-spacing: .2em;
+  line-height: 1.5;
+  text-align: justify;
+}
