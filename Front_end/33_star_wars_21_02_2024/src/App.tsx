@@ -9,12 +9,12 @@ import Main from "./components/main/Main";
 
 function App() {
 
-const [page, setPage] = useState('home');
+
 
   return (
     <div className="container-fluid">
       <Header/>
-      <Main page={page} setPage={setPage}/>
+      <Main/>
       <Footer/>
     </div>
   );

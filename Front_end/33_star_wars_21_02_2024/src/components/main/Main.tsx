@@ -3,17 +3,13 @@ import Hero from './Hero'
 import DreamTeam from './DreamTeam'
 import FarGalaxy from './FarGalaxy'
 
-export interface MainProps {
-  page: string;
-  setPage: (page: string) => void;
-}
-const Main: React.FC<MainProps> = ({page, setPage}) => {
+const Main = () => {
   return (
     <div>
       <main className='clearFix'>
-       {page === 'home' && <Hero/>}
-       {page === 'dreamTeam' && <DreamTeam/>}
-        {page === 'farGalaxy' && <FarGalaxy/>}
+      <Hero/>
+      <DreamTeam/>
+       <FarGalaxy/>
       </main>
     </div>
   )
